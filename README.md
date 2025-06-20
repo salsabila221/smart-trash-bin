@@ -10,7 +10,7 @@ An Arduino based smart trash bin that opens automatically using ultrasonic senso
 
   ### Hardware
   - Trash bin (any size)
-  - Arduino Uno
+  - Two Arduino Uno
   - HC-SR04 ultrasonic sensor
   - Soil moisture sensor
   - Servo motor
@@ -22,10 +22,9 @@ An Arduino based smart trash bin that opens automatically using ultrasonic senso
   - Arduino IDE
  
   ## How it works?
-  - The ultrasonic sensor detects hand within a specific distance range
-  - If the ultrasonic sensor is triggered, the servo motor will open the lid automatically
-  - After waste is placed inside, the soil moisture sensor is able to read its moisture level
-  - Waste is then sorted into a wet or dry section based on the sensor data
+  The project uses two Arduino boards to separate tasks for smoother performance:
+  1. Arduino A (Lid_Controller): Uses an ultrasonic sensor to detect approaching object or hand. When an object is detected within a specific range, it triggers a servo motor to automatically open the lid
+  2. Arduino B (Waste_Sorter): Uses a soil moisture sensor to determine whether the trash is wet or dry. Based on the moisture sensor reading, it can trigger sorting between wet or dry section.
  
   ## Author
   Created by Salsabila Wiryawan
